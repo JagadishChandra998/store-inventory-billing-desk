@@ -1,0 +1,340 @@
+{
+  "title": "MERN Support Desk Lite",
+  "description": "A lightweight full-stack support desk baseline on the approved React and Express convention for mandatory project delivery.",
+  "repo_full_name": "niyatispark-in/template-mern",
+  "default_branch": "main",
+  "project_kind": "mandatory",
+  "stack_type": "mern",
+  "deploy_target": "render",
+  "deploy_type": "fullstack_multi_service",
+  "setup_version": "v1",
+  "project_brief_pdf_url": "",
+  "published_from_draft_id": "ptd_dd808a33a81141d9",
+  "published_template_id": "pt_df61362acaf740c3",
+  "version_note": "Initial MERN baseline closure draft created on 2026-07-16 for Support Desk Lite.",
+  "generated_at": "2026-07-16T15:17:19.920Z",
+  "baseline_profile": "mern-react-express-render",
+  "env_template": {
+    "variables": [
+      {
+        "key": "PORT",
+        "scope": "backend",
+        "required": true,
+        "sample": "5000"
+      },
+      {
+        "key": "FRONTEND_PUBLIC_API_BASE",
+        "scope": "frontend",
+        "required": false,
+        "sample": "https://your-api.onrender.com"
+      },
+      {
+        "key": "DEMO_USER_EMAIL",
+        "scope": "backend",
+        "required": false,
+        "sample": "agent@support.local"
+      },
+      {
+        "key": "DEMO_USER_PASSWORD",
+        "scope": "backend",
+        "required": false,
+        "sample": "support-demo"
+      }
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "key": "scope_completion",
+        "label": "Scope Completion",
+        "weight": 35
+      },
+      {
+        "key": "feature_quality",
+        "label": "Feature Quality",
+        "weight": 25
+      },
+      {
+        "key": "deployment_readiness",
+        "label": "Deployment Readiness",
+        "weight": 20
+      },
+      {
+        "key": "documentation_handoff",
+        "label": "Documentation And Handoff",
+        "weight": 20
+      }
+    ],
+    "verdict_options": [
+      "pending",
+      "needs_work",
+      "approved",
+      "showcase_ready"
+    ]
+  },
+  "evaluation_config": {
+    "stack": "mern",
+    "framework_type": "react-express",
+    "workdir": ".",
+    "commands": {
+      "install": "npm install --prefix frontend && npm install --prefix backend",
+      "build": "npm run build --prefix frontend",
+      "test": "node --test backend/tests/*.test.js",
+      "smoke": "node --test backend/tests/day1-health.test.js"
+    },
+    "feature_checks": [
+      {
+        "key": "login_authentication",
+        "label": "Login flow for approved users",
+        "tier": "minimum",
+        "type": "command",
+        "command": "node --test backend/tests/login-authentication.integration.test.js",
+        "required": true
+      },
+      {
+        "key": "ticket_crud",
+        "label": "Create, edit, and delete tickets",
+        "tier": "minimum",
+        "type": "command",
+        "command": "node --test backend/tests/ticket-crud.contract.test.js",
+        "required": true
+      },
+      {
+        "key": "ticket_filters",
+        "label": "Filter ticket list by status",
+        "tier": "minimum",
+        "type": "command",
+        "command": "node --test backend/tests/filtered-list.contract.test.js",
+        "required": true
+      },
+      {
+        "key": "dashboard_cards",
+        "label": "Dashboard cards showing open and closed totals",
+        "tier": "minimum",
+        "type": "command",
+        "command": "node --test backend/tests/dashboard-summary.contract.test.js",
+        "required": true
+      },
+      {
+        "key": "ticket_assignment",
+        "label": "Assign tickets to an owner",
+        "tier": "level2",
+        "type": "command",
+        "command": "node --test backend/tests/assignment.contract.test.js",
+        "required": false
+      },
+      {
+        "key": "ticket_comments",
+        "label": "Add comments or activity notes on a ticket",
+        "tier": "level2",
+        "type": "command",
+        "command": "node --test backend/tests/comments-activity.contract.test.js",
+        "required": false
+      },
+      {
+        "key": "ticket_validation",
+        "label": "Reject invalid ticket payloads with clear validation errors",
+        "tier": "level2",
+        "type": "command",
+        "command": "node --test backend/tests/validation.contract.test.js",
+        "required": false
+      },
+      {
+        "key": "ticket_pagination",
+        "label": "Paginated ticket listing",
+        "tier": "level3",
+        "type": "command",
+        "command": "node --test backend/tests/pagination.contract.test.js",
+        "required": false
+      },
+      {
+        "key": "ticket_audit_trail",
+        "label": "Audit trail for key state transitions",
+        "tier": "level3",
+        "type": "command",
+        "command": "node --test backend/tests/audit-trail.contract.test.js",
+        "required": false
+      }
+    ]
+  },
+  "service_manifest": {
+    "deploy_target": "render",
+    "deploy_type": "fullstack_multi_service",
+    "services": [
+      {
+        "name": "web",
+        "kind": "frontend",
+        "root": "frontend",
+        "port": 3000,
+        "health_path": "/"
+      },
+      {
+        "name": "api",
+        "kind": "backend",
+        "root": "backend",
+        "port": 5000,
+        "health_path": "/health"
+      }
+    ]
+  },
+  "feature_contract": {
+    "feature_contract_version": "v1",
+    "requirements": [
+      {
+        "key": "login_authentication",
+        "label": "Login flow for approved users",
+        "tier": "minimum",
+        "required": true,
+        "verification": "automated"
+      },
+      {
+        "key": "ticket_crud",
+        "label": "Create, edit, and delete tickets",
+        "tier": "minimum",
+        "required": true,
+        "verification": "automated"
+      },
+      {
+        "key": "ticket_filters",
+        "label": "Filter ticket list by status",
+        "tier": "minimum",
+        "required": true,
+        "verification": "automated"
+      },
+      {
+        "key": "dashboard_cards",
+        "label": "Dashboard cards showing open and closed totals",
+        "tier": "minimum",
+        "required": true,
+        "verification": "automated"
+      },
+      {
+        "key": "ticket_assignment",
+        "label": "Assign tickets to an owner",
+        "tier": "level2",
+        "required": false,
+        "verification": "automated"
+      },
+      {
+        "key": "ticket_comments",
+        "label": "Add comments or activity notes on a ticket",
+        "tier": "level2",
+        "required": false,
+        "verification": "automated"
+      },
+      {
+        "key": "persistent_filter_state",
+        "label": "Persist filter state across refreshes",
+        "tier": "level2",
+        "required": false,
+        "verification": "manual_review_required",
+        "manual_reason": "This baseline leaves the browser persistence UX to SPC review because the starter kit does not ship a trusted frontend e2e runner yet."
+      },
+      {
+        "key": "ticket_validation",
+        "label": "Reject invalid ticket payloads with clear validation errors",
+        "tier": "level2",
+        "required": false,
+        "verification": "automated"
+      },
+      {
+        "key": "debounced_search",
+        "label": "Debounced ticket search",
+        "tier": "level3",
+        "required": false,
+        "verification": "manual_review_required",
+        "manual_reason": "This interaction is currently reviewed manually until a frontend behavior harness is frozen for the MERN baseline."
+      },
+      {
+        "key": "ticket_pagination",
+        "label": "Paginated ticket listing",
+        "tier": "level3",
+        "required": false,
+        "verification": "automated"
+      },
+      {
+        "key": "ticket_audit_trail",
+        "label": "Audit trail for key state transitions",
+        "tier": "level3",
+        "required": false,
+        "verification": "automated"
+      }
+    ]
+  },
+  "deployment_contract": {
+    "provider": "render",
+    "deployment_standard": "mandatory-render-v1",
+    "stack": "mern",
+    "framework_type": "react-express",
+    "deploy_type": "fullstack_multi_service",
+    "blueprint_path": "render.yaml",
+    "day1_live_skeleton": {
+      "required": true,
+      "checks": [
+        "backend_health",
+        "frontend_http",
+        "api_connectivity",
+        "blueprint_valid"
+      ]
+    },
+    "generated_env_keys": [
+      "PORT",
+      "FRONTEND_PUBLIC_API_BASE",
+      "DEMO_USER_EMAIL",
+      "DEMO_USER_PASSWORD"
+    ],
+    "database": {
+      "required": false,
+      "provider": "render_postgres_preferred"
+    },
+    "frontend": {
+      "service_type": "static_site",
+      "name": "web",
+      "root_dir": "frontend",
+      "health_path": "/"
+    },
+    "backend": {
+      "service_type": "web_service",
+      "name": "api",
+      "root_dir": "backend",
+      "health_path": "/health"
+    }
+  },
+  "files": [
+    ".gitignore",
+    "README.md",
+    "backend/package.json",
+    "backend/server.js",
+    "backend/tests/_feature-contract-placeholder.js",
+    "backend/tests/assignment.contract.test.js",
+    "backend/tests/audit-trail.contract.test.js",
+    "backend/tests/comments-activity.contract.test.js",
+    "backend/tests/dashboard-summary.contract.test.js",
+    "backend/tests/day1-health.test.js",
+    "backend/tests/feature-contract-baseline.test.js",
+    "backend/tests/filtered-list.contract.test.js",
+    "backend/tests/login-authentication.integration.test.js",
+    "backend/tests/pagination.contract.test.js",
+    "backend/tests/ticket-crud.contract.test.js",
+    "backend/tests/validation.contract.test.js",
+    "frontend/package.json",
+    "frontend/scripts/build.mjs",
+    "frontend/src/app.js",
+    "frontend/src/index.html",
+    "frontend/src/styles.css",
+    "frontend/tests/day1-static.test.mjs",
+    "niyati/deployment-contract.json",
+    "niyati/env-template.json",
+    "niyati/evaluation-config.json",
+    "niyati/feature-contract.json",
+    "niyati/level2-features.md",
+    "niyati/level3-features.md",
+    "niyati/minimum-features.md",
+    "niyati/project-brief.md",
+    "niyati/rubric.json",
+    "niyati/service-manifest.json",
+    "niyati/setup-guide.md",
+    "niyati/template-manifest.json",
+    "render.yaml"
+  ]
+}

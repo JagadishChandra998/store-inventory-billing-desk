@@ -1,0 +1,85 @@
+{
+  "stack": "mern",
+  "framework_type": "react-express",
+  "workdir": ".",
+  "commands": {
+    "install": "npm install --prefix frontend && npm install --prefix backend",
+    "build": "npm run build --prefix frontend",
+    "test": "node --test backend/tests/*.test.js",
+    "smoke": "node --test backend/tests/day1-health.test.js"
+  },
+  "feature_checks": [
+    {
+      "key": "login_authentication",
+      "label": "Login flow for approved users",
+      "tier": "minimum",
+      "type": "command",
+      "command": "node --test backend/tests/login-authentication.integration.test.js",
+      "required": true
+    },
+    {
+      "key": "ticket_crud",
+      "label": "Create, edit, and delete tickets",
+      "tier": "minimum",
+      "type": "command",
+      "command": "node --test backend/tests/ticket-crud.contract.test.js",
+      "required": true
+    },
+    {
+      "key": "ticket_filters",
+      "label": "Filter ticket list by status",
+      "tier": "minimum",
+      "type": "command",
+      "command": "node --test backend/tests/filtered-list.contract.test.js",
+      "required": true
+    },
+    {
+      "key": "dashboard_cards",
+      "label": "Dashboard cards showing open and closed totals",
+      "tier": "minimum",
+      "type": "command",
+      "command": "node --test backend/tests/dashboard-summary.contract.test.js",
+      "required": true
+    },
+    {
+      "key": "ticket_assignment",
+      "label": "Assign tickets to an owner",
+      "tier": "level2",
+      "type": "command",
+      "command": "node --test backend/tests/assignment.contract.test.js",
+      "required": false
+    },
+    {
+      "key": "ticket_comments",
+      "label": "Add comments or activity notes on a ticket",
+      "tier": "level2",
+      "type": "command",
+      "command": "node --test backend/tests/comments-activity.contract.test.js",
+      "required": false
+    },
+    {
+      "key": "ticket_validation",
+      "label": "Reject invalid ticket payloads with clear validation errors",
+      "tier": "level2",
+      "type": "command",
+      "command": "node --test backend/tests/validation.contract.test.js",
+      "required": false
+    },
+    {
+      "key": "ticket_pagination",
+      "label": "Paginated ticket listing",
+      "tier": "level3",
+      "type": "command",
+      "command": "node --test backend/tests/pagination.contract.test.js",
+      "required": false
+    },
+    {
+      "key": "ticket_audit_trail",
+      "label": "Audit trail for key state transitions",
+      "tier": "level3",
+      "type": "command",
+      "command": "node --test backend/tests/audit-trail.contract.test.js",
+      "required": false
+    }
+  ]
+}
