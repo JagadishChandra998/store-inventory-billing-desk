@@ -1,0 +1,419 @@
+/* =====================================================
+   MAIN APPLICATION LAYOUT
+===================================================== */
+
+.app-layout {
+    min-height: 100vh;
+
+    display: flex;
+
+    background: #f5f7fb;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 255px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 22px 16px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            180deg,
+            #111827 0%,
+            #172554 100%
+        );
+
+    color: white;
+
+    box-shadow:
+        5px 0 25px rgba(15, 23, 42, 0.12);
+
+    z-index: 1000;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.sidebar-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 10px 25px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.10);
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 15px rgba(99, 102, 241, 0.35);
+}
+
+.sidebar-logo h2 {
+    margin: 0;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+.sidebar-logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    color: #94a3b8;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-top: 25px;
+}
+
+.nav-links a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 14px;
+
+    border-radius: 11px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-links a span {
+    width: 22px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+/* Hover */
+
+.nav-links a:hover {
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    transform: translateX(3px);
+}
+
+
+/* Active link */
+
+.nav-links a.active {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 6px 15px rgba(99, 102, 241, 0.25);
+}
+
+
+/* =====================================================
+   BOTTOM SECTION
+===================================================== */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+/* =====================================================
+   USER ROLE
+===================================================== */
+
+.user-role {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 10px;
+
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #818cf8,
+            #a78bfa
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.user-role strong {
+    display: block;
+
+    font-size: 12px;
+
+    color: #f8fafc;
+}
+
+.user-role small {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    color: #94a3b8;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.logout-button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 11px;
+
+    border: 1px solid
+        rgba(248, 113, 113, 0.20);
+
+    border-radius: 10px;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+
+    color: #fca5a5;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.logout-button:hover {
+    background:
+        rgba(239, 68, 68, 0.18);
+
+    color: #fecaca;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    width: calc(100% - 255px);
+
+    min-height: 100vh;
+
+    margin-left: 255px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 215px;
+    }
+
+    .main-content {
+        width: calc(100% - 215px);
+
+        margin-left: 215px;
+    }
+
+    .sidebar-logo span {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 72px;
+
+        padding: 18px 10px;
+    }
+
+    .sidebar-logo {
+        justify-content: center;
+
+        padding: 5px 0 20px;
+    }
+
+    .sidebar-logo > div:last-child {
+        display: none;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links a {
+        justify-content: center;
+
+        padding: 12px;
+    }
+
+    .nav-links a span {
+        font-size: 18px;
+    }
+
+    .nav-links a {
+        font-size: 0;
+    }
+
+    .user-role {
+        justify-content: center;
+
+        padding: 8px;
+    }
+
+    .user-role > div:last-child {
+        display: none;
+    }
+
+    .logout-button {
+        font-size: 0;
+
+        padding: 12px;
+    }
+
+    .logout-button span {
+        font-size: 18px;
+    }
+
+    .main-content {
+        width: calc(100% - 72px);
+
+        margin-left: 72px;
+    }
+}

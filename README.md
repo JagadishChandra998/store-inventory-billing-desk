@@ -49,3 +49,18 @@ This template is intentionally baseline-sized. It establishes a clean React and 
 - `niyati/deployment-contract.json`
 - `niyati/service-manifest.json`
 - `render.yaml`
+
+
+
+
+
+
+
+
+------AXIOS-----------
+
+Axios is a JavaScript library used to make HTTP requests from the browser or from a Node.js server. It allows your frontend or backend to communicate with APIs.
+
+---> {req.params.id} it store the value that comes from the URL, it's an object created by the express
+
+---> aggregate() is used when we want MongoDB to perform calculations on your data.
