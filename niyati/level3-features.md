@@ -1,3 +1,0 @@
-- Debounced ticket search
-- Paginated ticket listing
-- Audit trail for key state transitions

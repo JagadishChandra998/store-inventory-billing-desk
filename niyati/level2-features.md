@@ -1,4 +1,0 @@
-- Assign tickets to an owner
-- Add comments or activity notes on a ticket
-- Persist filter state across refreshes
-- Reject invalid ticket payloads with clear validation errors

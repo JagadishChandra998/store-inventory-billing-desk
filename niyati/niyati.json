@@ -1,7 +1,0 @@
-{
-  "kind": "fullstack",
-  "default_ref": "main",
-  "checks": {
-    "script": "niyati/check.sh"
-  }
-}
